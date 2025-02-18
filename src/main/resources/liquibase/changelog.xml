@@ -15,4 +15,18 @@
             <column name="skills" type="varchar(255)"/>
         </createTable>
     </changeSet>
+    <changeSet id="table user" author="sergey">
+        <createTable tableName="user">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="surname" type="varchar(255)"/>
+            <column name="email" type="varchar(255)"/>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type" type="enum('USER', 'ADMIN')" defaultValue="USER"/>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
